@@ -1,47 +1,15 @@
-# Welcome to Remix + Cloudflare!
+# Remix, Cloudflare and Sentry
 
-- 📖 [Remix docs](https://remix.run/docs)
-- 📖 [Remix Cloudflare docs](https://remix.run/guides/vite#cloudflare)
+Using the latest Remix, Wrangler and Sentry packages - with nothing much extra.
 
-## Development
+The git history should be pretty followable if you want to follow the steps yourself.
 
-Run the dev server:
+There are 3 routes:
 
-```sh
-npm run dev
-```
+- `/client` - (The default sentry clientside error example)
+- `/action` - A form that when submitted, throws an error
+- `/loader` - A page that when loaded, throws an error
 
-To run Wrangler:
+Client side errors come through perfectly - and so do serverside errors - until it's deployed.
 
-```sh
-npm run build
-npm run start
-```
-
-## Typegen
-
-Generate types for your Cloudflare bindings in `wrangler.toml`:
-
-```sh
-npm run typegen
-```
-
-You will need to rerun typegen whenever you make changes to `wrangler.toml`.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then, deploy your app to Cloudflare Pages:
-
-```sh
-npm run deploy
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+The moment it's actually on a Cloudflare worker - serverside errors always come through as `Unexpected Server Error` without any details.
