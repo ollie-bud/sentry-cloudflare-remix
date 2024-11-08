@@ -17,6 +17,9 @@ importers:
       '@remix-run/react':
         specifier: ^2.13.1
         version: 2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
+      '@sentry/cloudflare':
+        specifier: ^8.37.1
+        version: 8.37.1
       '@sentry/remix':
         specifier: ^8.37.1
         version: 8.37.1(@opentelemetry/api@1.9.0)(@opentelemetry/core@1.27.0(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.54.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.27.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.27.0)(@remix-run/node@2.13.1(typescript@5.6.3))(@remix-run/react@2.13.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react@18.3.1)
@@ -1275,6 +1278,10 @@ packages:
     resolution: {integrity: sha512-CR0oujpAnhegK2pBAv6ZReMqbFTuNJLDZLvoD1B+syrKZX+R+oxkgT2e1htsBbht+wGxAsluVWsIAydSws1GAA==}
     engines: {node: '>= 10'}
     hasBin: true
+
+  '@sentry/cloudflare@8.37.1':
+    resolution: {integrity: sha512-1W3Opow4cDh+WXiHV71eMcTvIgc4wd9La60IcmWo/YlJiOUXmlcjcQqRSNOpOhHFv2sLezAVyXIwo6+lglZbsQ==}
+    engines: {node: '>=14.18'}
 
   '@sentry/core@8.37.1':
     resolution: {integrity: sha512-82csXby589iDupM3VgCHJeWZagUyEEaDnbFcoZ/Z91QX2Sjq8FcF5OsforoXjw09i0XTFqlkFAnQVpDBmMXcpQ==}
@@ -5415,6 +5422,14 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+
+  '@sentry/cloudflare@8.37.1':
+    dependencies:
+      '@sentry/core': 8.37.1
+      '@sentry/types': 8.37.1
+      '@sentry/utils': 8.37.1
+    optionalDependencies:
+      '@cloudflare/workers-types': 4.20241106.0
 
   '@sentry/core@8.37.1':
     dependencies:
